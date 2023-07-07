@@ -19,25 +19,25 @@ There are two parts to the plugin integration
 - Plugin Installation and Configuration
 
 ## LTI Configuration
-The LTI (Learning Tools Interoperability) will serve as the interface for instructors to access and configure the Honorlock proctoring system for exams. To accomplish this, two steps are required: 
+The LTI (Learning Tools Interoperability) will serve as the interface for instructors to access and configure the Honorlock proctoring system for exams. To accomplish this, three steps are required: 
 1) Setting up an LTI external tool
-2) Adding the tool to each course where proctoring is desired.
+2) Adding the tool to each course where proctoring is desired
+3) External Service Configuration and User Access
 
 ### Create the LTI External Tool
 - Login as an admin in Moodle
 - Go to the **Site Administration > Plugins > Activity modules > External Tool > Manage Tools** section
 - Click the **configure a tool manually** link and enter the following configuration (Ignoring the ones not present in this list)
     - Tool name: Honorlock LTI
-    - Tool URL: [environment.baseurl]/org/[organization_uuid]/launch
+    - Tool URL: https://app.honorlock.com/org/[organization_uuid]/launch
     - Tool Description: Honorlock LTI Tool 1.3
     - LTI version: LTI 1.3
     - Public key type: Keyset URL
-    - Initial login URL: [environment.baseurl]/org/[organization_uuid]/oidc/login
-    - Redirection URI(s): [environment.baseurl]/org/[organization_uuid]/launch
-    - Custom parameters: platform=moodle
+    - Initial login URL: https://app.honorlock.com/org/[organization_uuid]/oidc/login
+    - Redirection URI(s): https://app.honorlock.com/org/[organization_uuid]/launch
     - Tool configuration usage: Show as preconfigured tool when adding an external tool
     - Default launch container: Embed, without blocks
-    - ***[optional]*** Icon URL (*You might need to click "**Show more...**"*): [environment.baseurl]/favicons/favicon.ico
+    - ***[optional]*** Icon URL (*You might need to click "**Show more...**"*): https://app.honorlock.com/favicons/favicon.ico
 - Scroll down and click the **Save changes** button.
 - On the generated tool box click the configuration details button (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/list.svg" width="12" height="12">) and take note of the following values as they will need to be provided to Honorlock to complete setup. 
     - Platform ID
