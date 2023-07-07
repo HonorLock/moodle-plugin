@@ -6,6 +6,18 @@ The Honorlock Proctoring Moodle plugin is easy to install and use, and requires 
 
 In this readme file, we will go through the key features of the Honorlock Proctoring Moodle plugin, and provide detailed instructions on how to install, configure and use it. This readme file will provide all the information you need to get started with the Honorlock Proctoring Moodle plugin.
 
+- [Requirements](#requirements)
+- [Configuration](#configuration)
+    - [LTI Configuration](#lti-configuration)
+        - [Create the LTI External Tool](#create-the-lti-external-tool)
+        - [Add LTI to a Course](#add-lti-to-a-course)
+    - [Plugin Configuration](#plugin-configuration)
+        - [Install the Plugin](#install-the-plugin)
+        - [External Service Configuration and User Access](#external-service-configuration-and-user-access)
+- [Issue Tracker](#issue-tracker-for-honorlocks-moodle-plugin)
+    - [How to Submit an Issue](#how-to-submit-an-issue)
+    - [What to Expect](#what-to-expect)
+
 
 # Requirements
 
@@ -14,30 +26,29 @@ In this readme file, we will go through the key features of the Honorlock Procto
 3. Honorlock Proctoring authenticates for instructors via LTI. Please, check the LTI configuration below.
 
 # Configuration
-There are two parts to the plugin integration
+There are two parts to the Honorlock Proctoring integration process
 - LTI configuration
 - Plugin Installation and Configuration
 
 ## LTI Configuration
-The LTI (Learning Tools Interoperability) will serve as the interface for instructors to access and configure the Honorlock proctoring system for exams. To accomplish this, two steps are required: 
-1) Setting up an LTI external tool
-2) Adding the tool to each course where proctoring is desired.
+The LTI (Learning Tools Interoperability) will serve as the interface for instructors to access and configure the Honorlock proctoring system for exams. To accomplish this, the following steps are required: 
+- Setting up an LTI external tool
+- Adding the tool to each course where proctoring is desired
 
 ### Create the LTI External Tool
 - Login as an admin in Moodle
 - Go to the **Site Administration > Plugins > Activity modules > External Tool > Manage Tools** section
 - Click the **configure a tool manually** link and enter the following configuration (Ignoring the ones not present in this list)
     - Tool name: Honorlock LTI
-    - Tool URL: [environment.baseurl]/org/[organization_uuid]/launch
+    - Tool URL: https://app.honorlock.com/org/[organization_uuid]/launch
     - Tool Description: Honorlock LTI Tool 1.3
     - LTI version: LTI 1.3
     - Public key type: Keyset URL
-    - Initial login URL: [environment.baseurl]/org/[organization_uuid]/oidc/login
-    - Redirection URI(s): [environment.baseurl]/org/[organization_uuid]/launch
-    - Custom parameters: platform=moodle
+    - Initial login URL: https://app.honorlock.com/org/[organization_uuid]/oidc/login
+    - Redirection URI(s): https://app.honorlock.com/org/[organization_uuid]/launch
     - Tool configuration usage: Show as preconfigured tool when adding an external tool
     - Default launch container: Embed, without blocks
-    - ***[optional]*** Icon URL (*You might need to click "**Show more...**"*): [environment.baseurl]/favicons/favicon.ico
+    - ***[optional]*** Icon URL (*You might need to click "**Show more...**"*): https://app.honorlock.com/favicons/favicon.ico
 - Scroll down and click the **Save changes** button.
 - On the generated tool box click the configuration details button (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/list.svg" width="12" height="12">) and take note of the following values as they will need to be provided to Honorlock to complete setup. 
     - Platform ID
@@ -59,13 +70,17 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
         - Click **Save and return to course**
         - Untoggle **Edit mode**
     - Click the Honorlock LTI external Tool
+
+## Plugin Configuration
+The Honorlock Plugin will enable students to take Honorlock proctored exams. To accomplish this, the following steps are required:
+- Plugin Installation
+- External Service Configuration and User Access
     
-## Install the plugin
+### Install the plugin
 - If this is the first time installing the plugin, you will be prompted for some setting values.
-    - Honorlock URL: The complete base URL for the Honorlock environment (e.g https://app.honorlock.com)
+    - Honorlock URL: The complete base URL for Honorlock (https://app.honorlock.com)
     - Honorlock Client ID: The Organization Client ID generated for your organization.
     - Honorlock Client Secret: The Organization Client Secret generated for your organization.
--  Follow the next instructions to complete the integration.
 
 ### External Service Configuration and User Access
 - Setting up the external service is most likely the most involved part of the whole integration. For this portion we need the following:
@@ -80,7 +95,7 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
 
 - For all the steps that follow you should log in to Moodle as an admin.
 
-### Create a special user in Moodle for the API
+#### Create a special user in Moodle for the API
 - Go to Site administration > Users > Accounts > Add a new user.
 - Fill in the required fields (the following values are suggested).
     - Username: honorlock_api
@@ -90,17 +105,17 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
     - Email: honorlockapi@example.com
 - Click Create user.
 
-### Enable Web services in Moodle
+#### Enable Web services in Moodle
 - Go to Site administration > General Advanced features (In Moodle 3 it’s just “Advanced features”).
 - Find the Enable web services option and make sure it is enabled (Notice the default is disabled).
 - Click the Save Changes Button.
 
-### Enable Web Service REST Protocol
+#### Enable Web Service REST Protocol
 - Go to Site administration > Server > Web Services > Manage Protocols ([moodleURL]/admin/settings.php?section=webserviceprotocols).
 - Click the icon to Enable the REST protocol.
 - Click the Save Changes Button.
 
-### Create the new web service in Moodle
+#### Create the new web service in Moodle
 - Go to Site administration > Server > Web services > External services.
 - Click Add.
 - Fill in the required fields.
@@ -117,7 +132,7 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
     - mod_quiz_get_quizzes_by_courses
 - Click Add functions.
 
-### Authorize the created user on the newly created web service
+#### Authorize the created user on the newly created web service
 - Go to Site administration > Server > Web services > External services.
 - Look for the Moodle API you just created and click the Authorised users link.
 - Add the Honorlock API user to the list of authorized users.
@@ -126,7 +141,7 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
 - Make sure the user appears in the Authorized users list.
 
 
-### Define a new role in moodle
+#### Define a new role in moodle
 - Go to Site administration > Users > Permissions > define roles.
 - Click Add a new role.
 - For “Use role or archetype” select “No role”.
@@ -138,7 +153,6 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
     - Role archetype: None
     - Context types where this role may be assigned: 
         - Check system and leave others unchecked
-
     - In the capability section at the bottom allow the following permissions (tip: do a find for each).
         - moodle/course:update
         - moodle/course:view
@@ -147,10 +161,9 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
         - webservice/rest:use
         - mod/quiz:view
         - mod/quiz:viewreports
-
 - Scroll down and click Create This Role and then you’ll be presented with the definition of the role after
 
-### Assign the new role to the user
+#### Assign the new role to the user
 - Go to Site administration > Users > Permissions > Assign system roles.
 - Select the Honorlock API Access role.
 - Add the Honorlock API user to the Existing users list.
@@ -158,8 +171,7 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
 - Click the ← Add button.
 - Make sure the user appears in the Existing users list.
 
-
-### Create a token for the user
+#### Create a token for the user
 - Go to Site administration > Server > Web services > Manage tokens.
 - Click Create token.
 - Search the Honorlock API  user in the user field and click on it to add it. 
@@ -169,7 +181,7 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
 - Click the Save changes button.
 - Make note of the token to provide to Honorlock.
 
-### Contact Honorlock to complete setup
+#### Contact Honorlock to complete setup
 - Provide Honorlock with the following information from the previous steps: 
     - Platform ID
     - Client ID
