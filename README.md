@@ -178,3 +178,34 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
     - Access token URL
     - Authentication request URL
     - Token
+
+# Issue Tracker for Honorlock's Moodle Plugin
+
+This repository serves as the dedicated issue tracker for Honorlock's Moodle Plugin. We have created this separate repository to keep things organized and efficient as we work towards improving and maintaining our Moodle plugin.
+
+**Please note**, at this time, we are only accepting reports of bugs or glitches. We are not taking feature requests through this issue tracker.
+
+## How to Submit an Issue
+
+If you have found a bug or glitch related to our Moodle plugin, please follow these steps to create a new issue:
+
+1. **Check existing issues** - Take a look at the existing issues to see if someone else has already reported the same problem.
+
+2. **Create a new issue** - If your issue is unique, click on the "Issues" tab near the top of the page, and then click the "New issue" button.
+
+3. **Describe the issue** - Provide as much detail as possible in the issue form:
+
+    - Choose a clear and concise title that summarises the problem.
+    - Describe the issue in detail, providing the necessary steps to reproduce the problem if it's a bug.
+    - If possible, include screenshots or screen recordings to help illustrate the issue.
+    - Include details about your system configuration such as operating system, browser version, and Moodle version.
+    
+4. **Submit the issue** - After you have filled out the form, click "Submit new issue" to create the issue. We will review it and respond as soon as possible.
+
+## What to Expect
+
+Once an issue is submitted, our team will review it and potentially ask for further information to better understand the problem. If we're able to reproduce a reported bug, we'll classify the issue accordingly and add it to our development roadmap. 
+
+Please understand that we prioritize issues based on a variety of factors including but not limited to the impact of the issue, the number of users it affects, and our development resources. As such, we can't guarantee a specific timeline for when an issue will be resolved. We appreciate your patience and understanding.
+
+Thank you for your contribution and support.
