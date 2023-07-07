@@ -62,7 +62,7 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
     
 ## Install the plugin
 - If this is the first time installing the plugin, you will be prompted for some setting values.
-    - Honorlock URL: The complete base URL for the Honorlock environment (e.g https://app.honorlock.com)
+    - Honorlock URL: The complete base URL for Honorlock (https://app.honorlock.com)
     - Honorlock Client ID: The Organization Client ID generated for your organization.
     - Honorlock Client Secret: The Organization Client Secret generated for your organization.
 -  Follow the next instructions to complete the integration.
