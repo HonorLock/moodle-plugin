@@ -8,11 +8,12 @@ In this readme file, we will go through the key features of the Honorlock Procto
 
 - [Requirements](#requirements)
 - [Configuration](#configuration)
-- [LTI Configuration](#lti-configuration)
-    - [Create the LTI External Tool](#create-the-lti-external-tool)
-    -  [Add LTI to a Course](#add-lti-to-a-course)
-    - [Install the Plugin](#install-the-plugin)
-    - [External Service Configuration and User Access](#external-service-configuration-and-user-access)
+    - [LTI Configuration](#lti-configuration)
+        - [Create the LTI External Tool](#create-the-lti-external-tool)
+        - [Add LTI to a Course](#add-lti-to-a-course)
+    - [Plugin Configuration](#plugin-configuration)
+        - [Install the Plugin](#install-the-plugin)
+        - [External Service Configuration and User Access](#external-service-configuration-and-user-access)
 - [Issue Tracker](#issue-tracker-for-honorlocks-moodle-plugin)
     - [How to Submit an Issue](#how-to-submit-an-issue)
     - [What to Expect](#what-to-expect)
@@ -25,16 +26,14 @@ In this readme file, we will go through the key features of the Honorlock Procto
 3. Honorlock Proctoring authenticates for instructors via LTI. Please, check the LTI configuration below.
 
 # Configuration
-There are two parts to the plugin integration
+There are two parts to the Honorlock Proctoring integration process
 - LTI configuration
 - Plugin Installation and Configuration
 
 ## LTI Configuration
 The LTI (Learning Tools Interoperability) will serve as the interface for instructors to access and configure the Honorlock proctoring system for exams. To accomplish this, the following steps are required: 
-1) Setting up an LTI external tool
-2) Adding the tool to each course where proctoring is desired
-3) Installing the plugin
-4) External Service Configuration and User Access
+- Setting up an LTI external tool
+- Adding the tool to each course where proctoring is desired
 
 ### Create the LTI External Tool
 - Login as an admin in Moodle
@@ -71,13 +70,17 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
         - Click **Save and return to course**
         - Untoggle **Edit mode**
     - Click the Honorlock LTI external Tool
+
+## Plugin Configuration
+The Honorlock Plugin will enable students to take Honorlock proctored exams. To accomplish this, the following steps are required:
+- Plugin Installation
+- External Service Configuration and User Access
     
 ### Install the plugin
 - If this is the first time installing the plugin, you will be prompted for some setting values.
     - Honorlock URL: The complete base URL for Honorlock (https://app.honorlock.com)
     - Honorlock Client ID: The Organization Client ID generated for your organization.
     - Honorlock Client Secret: The Organization Client Secret generated for your organization.
--  Follow the next instructions to complete the integration.
 
 ### External Service Configuration and User Access
 - Setting up the external service is most likely the most involved part of the whole integration. For this portion we need the following:
@@ -150,7 +153,6 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
     - Role archetype: None
     - Context types where this role may be assigned: 
         - Check system and leave others unchecked
-
     - In the capability section at the bottom allow the following permissions (tip: do a find for each).
         - moodle/course:update
         - moodle/course:view
@@ -159,7 +161,6 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
         - webservice/rest:use
         - mod/quiz:view
         - mod/quiz:viewreports
-
 - Scroll down and click Create This Role and then you’ll be presented with the definition of the role after
 
 #### Assign the new role to the user
@@ -169,7 +170,6 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
 - Click the user from the Potential users list.
 - Click the ← Add button.
 - Make sure the user appears in the Existing users list.
-
 
 #### Create a token for the user
 - Go to Site administration > Server > Web services > Manage tokens.
