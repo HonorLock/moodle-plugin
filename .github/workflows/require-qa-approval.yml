@@ -27,3 +27,4 @@ jobs:
         done
         echo "No approvals from QA team members found."
         exit 1
+        
