@@ -70,7 +70,7 @@ function local_honorlockproctoring_extend_navigation(global_navigation $navigati
             $pageurl = $PAGE->url->get_path();
 
             // Extension Check/Exam Instructions page.
-            if (str_contains($pageurl, "/mod/quiz/startattempt.php")) {
+            if (strpos($pageurl, "/mod/quiz/startattempt.php") !== false) {
                 $honorlock = new honorlock();
 
                 // Hit HL-API extension-check.
