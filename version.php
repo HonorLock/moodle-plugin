@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_honorlockproctoring';
-$plugin->release = '1.0.2';
-$plugin->version = 2023111601;
-$plugin->requires = 2020061502;
+$plugin->release = '1.0.3';
+$plugin->version = 2023112801;
+$plugin->requires = 2020061500;
 $plugin->maturity = MATURITY_STABLE;
