@@ -1,6 +1,8 @@
 # Honorlock Proctoring
 
-Welcome to the Moodle plugin for integrating with the Honorlock Proctoring! This plugin provides seamless integration between Moodle and Honorlock Proctoring, enabling online assessments to be proctored and monitored in real time. With this plugin, Moodle administrators can ensure the authenticity and validity of online exams, enhancing the reliability and trustworthiness of online education.
+Welcome to the Moodle plugin for integrating with the Honorlock Proctoring! This plugin provides seamless integration between Moodle and Honorlock Proctoring, enabling online assessments to be proctored and monitored in real time. With this plugin, Moodle administrators can ensure the authenticity and validity of online exams, enhancing the reliability and trustworthiness of online education. 
+
+A commercial subscription to Honorlock is required for the integration. 
 
 The Honorlock Proctoring Moodle plugin is easy to install and use, and requires minimal configuration. It provides a comprehensive solution for proctoring online exams, and is designed to be flexible and adaptable to the specific needs of each institution.
 
