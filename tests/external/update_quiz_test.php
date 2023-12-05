@@ -50,7 +50,7 @@ class update_quiz_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\update_quiz
      */
-    public function test_class_creation() {
+    public function test_class_creation(): void {
         $updatequiz = new update_quiz();
 
         $this->assertInstanceOf(update_quiz::class, $updatequiz);
@@ -61,7 +61,7 @@ class update_quiz_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\update_quiz::execute_parameters
      */
-    public function test_update_quiz_values_parameters() {
+    public function test_update_quiz_values_parameters(): void {
         $result = $this->update_quiz->execute_parameters();
 
         $this->assertIsObject($result);
@@ -72,7 +72,7 @@ class update_quiz_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\update_quiz::execute_returns
      */
-    public function test_update_quiz_values_returns() {
+    public function test_update_quiz_values_returns(): void {
         $result = $this->update_quiz->execute_returns();
 
         $this->assertIsObject($result);
@@ -83,9 +83,9 @@ class update_quiz_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\update_quiz::execute
      */
-    public function test_update_quiz_values() {
+    public function test_update_quiz_values(): void {
         $course = $this->getDataGenerator()->create_course();
-        $quiz = $this->getDataGenerator()->create_module('quiz', array('course' => $course->id));
+        $quiz = $this->getDataGenerator()->create_module('quiz', ['course' => $course->id]);
         $this->setAdminUser();
 
         $result = $this->update_quiz->execute($quiz->id, ['password' => 'password']);
@@ -99,7 +99,7 @@ class update_quiz_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\update_quiz::execute
      */
-    public function test_update_quiz_values_returns_false() {
+    public function test_update_quiz_values_returns_false(): void {
         $this->setAdminUser();
 
         $nonexistentquizid = random_int(1, 5000);
@@ -115,9 +115,9 @@ class update_quiz_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\update_quiz::execute
      */
-    public function test_update_quiz_values_when_value_not_in_allowedquizupdates() {
+    public function test_update_quiz_values_when_value_not_in_allowedquizupdates(): void {
         $course = $this->getDataGenerator()->create_course();
-        $quiz = $this->getDataGenerator()->create_module('quiz', array('course' => $course->id));
+        $quiz = $this->getDataGenerator()->create_module('quiz', ['course' => $course->id]);
         $this->setAdminUser();
 
         $result = $this->update_quiz->execute($quiz->id, ['notpassword' => 'password']);
@@ -131,7 +131,7 @@ class update_quiz_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\update_quiz::execute_parameters
      */
-    public function test_get_quiz_questions_parameters() {
+    public function test_get_quiz_questions_parameters(): void {
         $result = $this->update_quiz->execute_parameters();
 
         $this->assertIsObject($result);
@@ -142,7 +142,7 @@ class update_quiz_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\update_quiz::execute_returns
      */
-    public function test_get_quiz_questions_returns() {
+    public function test_get_quiz_questions_returns(): void {
         $result = $this->update_quiz->execute_returns();
 
         $this->assertIsObject($result);
