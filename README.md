@@ -4,7 +4,7 @@ Welcome to the Moodle plugin for integrating with the Honorlock Proctoring! This
 
 The Honorlock Proctoring Moodle plugin is easy to install and use, and requires minimal configuration. It provides a comprehensive solution for proctoring online exams, and is designed to be flexible and adaptable to the specific needs of each institution.
 
-A commercial license with Honorlock is required for integration.
+A commercial license with Honorlock is required for integration. Please reach out to Honorlock for more information [here](https://www.honorlock.com).
 
 In this readme file, we will go through the key features of the Honorlock Proctoring Moodle plugin, and provide detailed instructions on how to install, configure and use it. This readme file will provide all the information you need to get started with the Honorlock Proctoring Moodle plugin.
 
