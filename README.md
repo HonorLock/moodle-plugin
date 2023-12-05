@@ -2,9 +2,9 @@
 
 Welcome to the Moodle plugin for integrating with the Honorlock Proctoring! This plugin provides seamless integration between Moodle and Honorlock Proctoring, enabling online assessments to be proctored and monitored in real time. With this plugin, Moodle administrators can ensure the authenticity and validity of online exams, enhancing the reliability and trustworthiness of online education. 
 
-A commercial subscription to Honorlock is required for the integration. 
-
 The Honorlock Proctoring Moodle plugin is easy to install and use, and requires minimal configuration. It provides a comprehensive solution for proctoring online exams, and is designed to be flexible and adaptable to the specific needs of each institution.
+
+A commercial license with Honorlock is required for integration.
 
 In this readme file, we will go through the key features of the Honorlock Proctoring Moodle plugin, and provide detailed instructions on how to install, configure and use it. This readme file will provide all the information you need to get started with the Honorlock Proctoring Moodle plugin.
 
@@ -24,7 +24,7 @@ In this readme file, we will go through the key features of the Honorlock Procto
 # Requirements
 
 1. Honorlock Proctoring was tested with Moodle 3 and Moodle 4.
-2. An Honorlock organization client id and client secret are required for setup.
+2. Honorlock organization client id and client secret are required for setup
 3. Honorlock Proctoring authenticates for instructors via LTI. Please, check the LTI configuration below.
 
 # Configuration
@@ -50,6 +50,7 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
     - Redirection URI(s): https://app.honorlock.com/org/[organization_uuid]/launch
     - Tool configuration usage: Show as preconfigured tool when adding an external tool
     - Default launch container: Embed, without blocks
+    - In Moodle 4.3, you will also need to expand the Privacy Settings and Change the dropdown options to Always Share launchers name with tool and Always Share launchers email with tool
     - ***[optional]*** Icon URL (*You might need to click "**Show more...**"*): https://app.honorlock.com/favicons/favicon.ico
 - Scroll down and click the **Save changes** button.
 - On the generated tool box click the configuration details button (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/list.svg" width="12" height="12">) and take note of the following values as they will need to be provided to Honorlock to complete setup. 
@@ -72,6 +73,7 @@ The LTI (Learning Tools Interoperability) will serve as the interface for instru
         - Click **Save and return to course**
         - Untoggle **Edit mode**
     - Click the Honorlock LTI external Tool
+- Note for Moodle 4.3, you will need toggle the Show in activity chooser for the LTI in the Course Menu (Select the LTI External Tools option from the “More” dropdown)
 
 ## Plugin Configuration
 The Honorlock Plugin will enable students to take Honorlock proctored exams. To accomplish this, the following steps are required:
@@ -113,12 +115,12 @@ The Honorlock Plugin will enable students to take Honorlock proctored exams. To 
 - Click the Save Changes Button.
 
 #### Enable Web Service REST Protocol
-- Go to Site administration > Server > Web Services > Manage Protocols ([moodleURL]/admin/settings.php?section=webserviceprotocols).
+- Go to Site administration > Server > Web Services > Manage Protocols (In Moodle 3.9 and Above this can be found in Site Adminstration > Plugins > Web Services > Manage Protocols)
 - Click the icon to Enable the REST protocol.
 - Click the Save Changes Button.
 
 #### Create the new web service in Moodle
-- Go to Site administration > Server > Web services > External services.
+- Go to Site administration > Server > Web services > External services (In Moodle 3.9 and Above this can be found in Site Adminstration > Plugins > Web Services > External services)
 - Click Add.
 - Fill in the required fields.
     - Name: Moodle API
@@ -135,7 +137,7 @@ The Honorlock Plugin will enable students to take Honorlock proctored exams. To 
 - Click Add functions.
 
 #### Authorize the created user on the newly created web service
-- Go to Site administration > Server > Web services > External services.
+- Go to Site administration > Server > Web services > External services. (In Moodle 3.9 and Above this can be found in Site Adminstration > Plugins > Web Services > External services)
 - Look for the Moodle API you just created and click the Authorised users link.
 - Add the Honorlock API user to the list of authorized users.
 - Click the user from the Not authorized users list.
