@@ -30,11 +30,8 @@ use local_honorlockproctoring\external\get_quiz_questions;
  * @package   local_honorlockproctoring
  * @copyright 2023 Honorlock (https://honorlock.com/)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @runTestsInSeparateProcesses
  */
-
- /**
-  * @runTestsInSeparateProcesses
-  */
 class get_quiz_questions_test extends \externallib_advanced_testcase {
 
     /**

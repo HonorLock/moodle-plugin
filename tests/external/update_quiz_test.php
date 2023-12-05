@@ -30,9 +30,6 @@ use local_honorlockproctoring\external\update_quiz;
  * @package   local_honorlockproctoring
  * @copyright 2023 Honorlock (https://honorlock.com/)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
-/**
  * @runTestsInSeparateProcesses
  */
 class update_quiz_test extends \externallib_advanced_testcase {
