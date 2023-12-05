@@ -49,7 +49,7 @@ class observer_test extends \advanced_testcase {
     /**
      * @var user A generic user.
      */
-    protected $user;
+    protected $user1;
 
     /**
      * @var question_engine Question Engine.
@@ -250,7 +250,7 @@ class observer_test extends \advanced_testcase {
         $quizgenerator = $this->getDataGenerator()->get_plugin_generator('mod_quiz');
         $this->quiz = $quizgenerator->create_instance($params);
 
-        $this->quizobj = quiz::create($this->quiz->id, $this->user1->id);
+        $this->quizobj = \mod_quiz\quiz_settings::create($this->quiz->id, $this->user1->id);
 
         $questiongenerator = $this->getDataGenerator()->get_plugin_generator('core_question');
 
@@ -290,7 +290,7 @@ class observer_test extends \advanced_testcase {
         );
 
         if ($completed) {
-            $this->attemptobj = \quiz_attempt::create($attempt->id);
+            $this->attemptobj = \mod_quiz\quiz_attempt::create($attempt->id);
             $this->attemptobj->process_finish(time(), false);
         }
 
