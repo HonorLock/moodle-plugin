@@ -33,8 +33,8 @@ use local_honorlockproctoring\external\get_quiz_questions;
  */
 
  /**
- * @runTestsInSeparateProcesses
- */
+  * @runTestsInSeparateProcesses
+  */
 class get_quiz_questions_test extends \externallib_advanced_testcase {
 
     /**

@@ -166,7 +166,7 @@ class lib_test extends \advanced_testcase {
 
         \curl::mock_response(json_encode($testresponse));
 
-        $attemptobj = \quiz_attempt::create($attempt->id);
+        $attemptobj = \mod_quiz\quiz_attempt::create($attempt->id);
         $attemptobj->process_finish(time(), false);
 
         $PAGE = new moodle_page();
@@ -240,7 +240,7 @@ class lib_test extends \advanced_testcase {
         $quizgenerator = $this->getDataGenerator()->get_plugin_generator('mod_quiz');
         $this->quiz = $quizgenerator->create_instance($params);
 
-        $this->quizobj = \quiz::create($this->quiz->id, $this->user1->id);
+        $this->quizobj = \mod_quiz\quiz_settings::create($this->quiz->id, $this->user1->id);
 
         $questiongenerator = $this->getDataGenerator()->get_plugin_generator('core_question');
 

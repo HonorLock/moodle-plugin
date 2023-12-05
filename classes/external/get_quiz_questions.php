@@ -79,7 +79,6 @@ class get_quiz_questions extends \external_api {
      */
     public static function execute(int $quizid): array {
         global $DB, $CFG;
-       // require_once($CFG->dirroot . '/mod/quiz/attemptlib.php');
         require_once($CFG->dirroot . '/question/engine/bank.php');
         $params = self::validate_parameters(self::execute_parameters(), ['quizid' => $quizid]);
         try {
