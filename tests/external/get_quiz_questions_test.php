@@ -30,15 +30,19 @@ use local_honorlockproctoring\external\get_quiz_questions;
  * @package   local_honorlockproctoring
  * @copyright 2023 Honorlock (https://honorlock.com/)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @runTestsInSeparateProcesses
  */
 class get_quiz_questions_test extends \externallib_advanced_testcase {
+    /**
+     * @var get_quiz_questions Keeps the get_quiz_questions Class.
+     */
+    protected $getquizquestions;
 
     /**
      * Setup test data.
      */
     protected function setUp(): void {
         $this->resetAfterTest();
+        $this->get_quiz_questions = new get_quiz_questions();
     }
 
     /**
@@ -58,7 +62,7 @@ class get_quiz_questions_test extends \externallib_advanced_testcase {
      * @covers \local_honorlockproctoring\external\get_quiz_questions::execute_parameters
      */
     public function test_get_quiz_questions_parameters() {
-        $result = get_quiz_questions::execute_parameters();
+        $result = $this->get_quiz_questions->execute_parameters();
 
         $this->assertIsObject($result);
     }
@@ -69,7 +73,7 @@ class get_quiz_questions_test extends \externallib_advanced_testcase {
      * @covers \local_honorlockproctoring\external\get_quiz_questions::execute_returns
      */
     public function test_get_quiz_questions_returns() {
-        $result = get_quiz_questions::execute_returns();
+        $result = $this->get_quiz_questions->execute_returns();
 
         $this->assertIsObject($result);
     }
@@ -88,7 +92,7 @@ class get_quiz_questions_test extends \externallib_advanced_testcase {
         quiz_add_quiz_question($question->id, $quiz);
 
         $this->setAdminUser();
-        $result = get_quiz_questions::execute($quiz->id);
+        $result = $this->get_quiz_questions->execute($quiz->id);
 
         $this->assertIsArray($result);
         $this->assertTrue($result['success']);
@@ -107,7 +111,7 @@ class get_quiz_questions_test extends \externallib_advanced_testcase {
             'questions' => [],
         ];
 
-        $result = get_quiz_questions::execute($nonexistentquizid);
+        $result = $this->get_quiz_questions->execute($nonexistentquizid);
 
         $this->assertSame($expected, $result);
     }
