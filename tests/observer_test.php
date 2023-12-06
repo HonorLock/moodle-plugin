@@ -16,7 +16,7 @@
 
 namespace local_honorlockproctoring;
 
-use \quiz;
+use quiz;
 
 /**
  * Honorlock proctoring test for module.
@@ -77,8 +77,8 @@ class observer_test extends \advanced_testcase {
         $tokenresponse = (object)[
         "data" => [
           "access_token" => "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...",
-          "expires_in" => 86000
-        ]
+          "expires_in" => 86000,
+        ],
         ];
 
         \curl::mock_response(json_encode($tokenresponse));
@@ -285,8 +285,8 @@ class observer_test extends \advanced_testcase {
             'context' => \context_module::instance($this->quiz->cmid),
             'other' => [
                 'quizid' => $this->quiz->id,
-                'page' => 0
-            ]
+                'page' => 0,
+            ],
         ];
 
         if ($completed) {
@@ -301,8 +301,8 @@ class observer_test extends \advanced_testcase {
             "data" => [
                 "event_type" => "string",
                 "exam_taker_name" => "TestTaker",
-                "created_at" => "2023-08-24T14:15:22Z"
-            ]
+                "created_at" => "2023-08-24T14:15:22Z",
+            ],
             ];
 
         \curl::mock_response(json_encode($testresponse));
