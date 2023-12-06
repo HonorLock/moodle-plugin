@@ -35,7 +35,7 @@ const HL_NO_EDIT = 'HL_NO_EDIT';
  * @param global_navigation $navigation
  * @return void
  */
-function local_honorlockproctoring_extend_navigation(global_navigation $navigation) {
+function local_honorlockproctoring_extend_navigation(global_navigation $navigation): void {
     global $PAGE;
     global $CFG;
     global $USER;
@@ -43,7 +43,7 @@ function local_honorlockproctoring_extend_navigation(global_navigation $navigati
 
     if ($PAGE->cm && $PAGE->cm->modname === 'quiz') {
         $quizid = $PAGE->cm->instance;
-        $quiz = $DB->get_record('quiz', array('id' => $quizid));
+        $quiz = $DB->get_record('quiz', ['id' => $quizid]);
         $attempts = $DB->get_records('quiz_attempts', [
             'quiz' => $quizid,
             'userid' => $USER->id

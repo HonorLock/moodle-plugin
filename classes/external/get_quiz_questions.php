@@ -44,9 +44,9 @@ class get_quiz_questions extends \external_api {
      */
     public static function execute_parameters(): external_function_parameters {
         return new external_function_parameters(
-            array(
+            [
                 'quizid' => new external_value(PARAM_INT, 'Quiz Id', VALUE_REQUIRED),
-            )
+            ]
         );
     }
 
@@ -57,7 +57,7 @@ class get_quiz_questions extends \external_api {
      */
     public static function execute_returns(): external_single_structure {
         return new external_single_structure(
-            array(
+            [
                 'success' => new external_value(PARAM_BOOL, 'Was operation successful? '),
                 'quizid' => new external_value(PARAM_INT, 'Quiz id modified'),
                 'questions' => new external_multiple_structure(
@@ -67,7 +67,7 @@ class get_quiz_questions extends \external_api {
                         'intro' => new external_value(PARAM_RAW, 'Question Text'),
                     ])
                 ),
-            ),
+            ],
         );
     }
 

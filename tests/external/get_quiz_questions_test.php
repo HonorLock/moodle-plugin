@@ -50,7 +50,7 @@ class get_quiz_questions_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\get_quiz_questions
      */
-    public function test_class_creation() {
+    public function test_class_creation(): void {
         $getquizquestions = new get_quiz_questions();
 
         $this->assertInstanceOf(get_quiz_questions::class, $getquizquestions);
@@ -61,7 +61,7 @@ class get_quiz_questions_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\get_quiz_questions::execute_parameters
      */
-    public function test_get_quiz_questions_parameters() {
+    public function test_get_quiz_questions_parameters(): void {
         $result = $this->get_quiz_questions->execute_parameters();
 
         $this->assertIsObject($result);
@@ -72,7 +72,7 @@ class get_quiz_questions_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\get_quiz_questions::execute_returns
      */
-    public function test_get_quiz_questions_returns() {
+    public function test_get_quiz_questions_returns(): void {
         $result = $this->get_quiz_questions->execute_returns();
 
         $this->assertIsObject($result);
@@ -83,12 +83,12 @@ class get_quiz_questions_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\get_quiz_questions::execute
      */
-    public function test_get_quiz_questions() {
+    public function test_get_quiz_questions(): void {
         $course = $this->getDataGenerator()->create_course();
-        $quiz = $this->getDataGenerator()->create_module('quiz', array('course' => $course->id));
+        $quiz = $this->getDataGenerator()->create_module('quiz', ['course' => $course->id]);
         $questiongenerator = $this->getDataGenerator()->get_plugin_generator('core_question');
         $cat = $questiongenerator->create_question_category();
-        $question = $questiongenerator->create_question('shortanswer', null, array('category' => $cat->id));
+        $question = $questiongenerator->create_question('shortanswer', null, ['category' => $cat->id]);
         quiz_add_quiz_question($question->id, $quiz);
 
         $this->setAdminUser();
@@ -103,7 +103,7 @@ class get_quiz_questions_test extends \externallib_advanced_testcase {
      *
      * @covers \local_honorlockproctoring\external\get_quiz_questions::execute
      */
-    public function test_get_quiz_questions_returns_false() {
+    public function test_get_quiz_questions_returns_false(): void {
         $nonexistentquizid = random_int(1, 5000);
         $expected = [
             'success' => false,

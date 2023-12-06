@@ -119,10 +119,12 @@ class honorlockapi {
     public function send_request(string $type, string $endpoint, array $payload = []): ?object {
         $token = $this->get_token();
         $curl = new \curl();
-        $curl->setHeader(array(
-            'Accept: application/json',
-            "Authorization: Bearer $token",
-        ));
+        $curl->setHeader(
+            [
+                'Accept: application/json',
+                "Authorization: Bearer $token",
+            ]
+        );
 
         $jsonresult = null;
 

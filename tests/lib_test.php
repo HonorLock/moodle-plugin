@@ -136,7 +136,7 @@ class lib_test extends \advanced_testcase {
         $PAGE->set_cm($cm);
 
         $PAGE->set_url('/mod/quiz/startattempt.php',
-           array('cmid' => $cm->id, 'sesskey' => sesskey()));
+           ['cmid' => $cm->id, 'sesskey' => sesskey()]);
 
         $nav = new \global_navigation($PAGE);
 
@@ -175,7 +175,7 @@ class lib_test extends \advanced_testcase {
         $PAGE->set_cm($cm);
 
         $PAGE->set_url('/mod/quiz/startattempt.php',
-           array('cmid' => $cm->id, 'sesskey' => sesskey()));
+           ['cmid' => $cm->id, 'sesskey' => sesskey()]);
 
         $nav = new \global_navigation($PAGE);
 
@@ -201,7 +201,7 @@ class lib_test extends \advanced_testcase {
         $PAGE->set_cm($cm);
 
         $PAGE->set_url('/mod/quiz/summary.php',
-           array('cmid' => $cm->id, 'sesskey' => sesskey()));
+           ['cmid' => $cm->id, 'sesskey' => sesskey()]);
 
         $nav = new \global_navigation($PAGE);
 
@@ -245,7 +245,7 @@ class lib_test extends \advanced_testcase {
         $questiongenerator = $this->getDataGenerator()->get_plugin_generator('core_question');
 
         $cat = $questiongenerator->create_question_category();
-        $question = $questiongenerator->create_question('shortanswer', null, array('category' => $cat->id));
+        $question = $questiongenerator->create_question('shortanswer', null, ['category' => $cat->id]);
 
         quiz_add_quiz_question($question->id, $this->quiz);
     }
