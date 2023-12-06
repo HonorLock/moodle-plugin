@@ -65,7 +65,7 @@ class honorlock_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlock
      */
-    public function test_class_creation() {
+    public function test_class_creation(): void {
         $honorlock = new honorlock();
 
         $this->assertInstanceOf(honorlock::class, $honorlock);
@@ -76,7 +76,7 @@ class honorlock_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlock::extension_check
      */
-    public function test_extension_check() {
+    public function test_extension_check(): void {
         $testresponse = (object)[
         "data" => [
         "iframe_src" => "https://app.honorlock.com/install/extension?locale=en",
@@ -96,7 +96,7 @@ class honorlock_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlock::create_session
      */
-    public function test_create_session() {
+    public function test_create_session(): void {
         $testresponse = (object)[
         "data" => [
           "session" => [],
@@ -117,7 +117,7 @@ class honorlock_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlock::get_exam_instructions
      */
-    public function test_get_exam_instructions() {
+    public function test_get_exam_instructions(): void {
         $testresponse = (object)[
         "data" => [
           "launch_screen_url" => "https://app.honorlock.com/install/extension?locale=en",
@@ -135,7 +135,7 @@ class honorlock_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlock::begin_session
      */
-    public function test_begin_session() {
+    public function test_begin_session(): void {
         $testresponse = (object)[
         "message" => "Session has already started",
         "data" => [
@@ -160,7 +160,7 @@ class honorlock_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlock::end_session
      */
-    public function test_end_session() {
+    public function test_end_session(): void {
         $testresponse = (object)[
         "data" => [
           "event_type" => "string",

@@ -48,7 +48,7 @@ class honorlockapi_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlockapi
      */
-    public function test_class_creation() {
+    public function test_class_creation(): void {
         $honorlockapi = new honorlockapi();
         $reflection = new \ReflectionClass(get_class($honorlockapi));
         $property = $reflection->getProperty('config');
@@ -65,7 +65,7 @@ class honorlockapi_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlockapi::send_request
      */
-    public function test_send_get_request() {
+    public function test_send_get_request(): void {
         $this->generate_token();
 
         $testresponse = (object)[
@@ -119,7 +119,7 @@ class honorlockapi_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlockapi::send_request
      */
-    public function test_send_bad_method_to_send_request_returns_null() {
+    public function test_send_bad_method_to_send_request_returns_null(): void {
         $this->generate_token();
 
         $reflection = new \ReflectionClass(get_class($this->honorlockapi));
@@ -136,7 +136,7 @@ class honorlockapi_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlockapi::get_token
      */
-    public function test_get_token() {
+    public function test_get_token(): void {
         $this->generate_token();
 
         $reflection = new \ReflectionClass(get_class($this->honorlockapi));
@@ -152,7 +152,7 @@ class honorlockapi_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlockapi::get_token
      */
-    public function test_get_token_returns_early_with_no_token() {
+    public function test_get_token_returns_early_with_no_token(): void {
 
         $reflection = new \ReflectionClass(get_class($this->honorlockapi));
         $method = $reflection->getMethod('get_token');
@@ -174,7 +174,7 @@ class honorlockapi_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlockapi::generate_token
      */
-    public function test_generate_token() {
+    public function test_generate_token(): void {
         $reflection = new \ReflectionClass(get_class($this->honorlockapi));
         $method = $reflection->getMethod('generate_token');
         $method->setAccessible(true);
@@ -201,7 +201,7 @@ class honorlockapi_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\honorlockapi::generate_token
      */
-    public function test_generate_token_returns_early_with_no_token() {
+    public function test_generate_token_returns_early_with_no_token(): void {
         $reflection = new \ReflectionClass(get_class($this->honorlockapi));
         $method = $reflection->getMethod('generate_token');
         $method->setAccessible(true);

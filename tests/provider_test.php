@@ -51,7 +51,7 @@ class provider_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\privacy\provider::get_metadata
      */
-    public function test_get_metadata() {
+    public function test_get_metadata(): void {
         $collection = new collection('local_honorlockproctoring');
         $this->provider->get_metadata($collection);
 
@@ -63,7 +63,7 @@ class provider_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\privacy\provider::get_contexts_for_userid
      */
-    public function test_get_contexts_for_userid() {
+    public function test_get_contexts_for_userid(): void {
         $user1 = $this->getDataGenerator()->create_user();
         $this->setUser($user1);
 
@@ -77,12 +77,12 @@ class provider_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\privacy\provider::export_user_data
      */
-    public function test_export_user_data() {
+    public function test_export_user_data(): void {
         $user1 = $this->getDataGenerator()->create_user();
         $this->setUser($user1);
 
         $course = $this->getDataGenerator()->create_course();
-        $quiz = $this->getDataGenerator()->create_module('quiz', array('course' => $course->id));
+        $quiz = $this->getDataGenerator()->create_module('quiz', ['course' => $course->id]);
 
         $context = \context_module::instance($quiz->cmid);
 
@@ -97,9 +97,9 @@ class provider_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\privacy\provider::delete_data_for_all_users_in_context
      */
-    public function test_delete_data_for_all_users_in_context() {
+    public function test_delete_data_for_all_users_in_context(): void {
         $course = $this->getDataGenerator()->create_course();
-        $quiz = $this->getDataGenerator()->create_module('quiz', array('course' => $course->id));
+        $quiz = $this->getDataGenerator()->create_module('quiz', ['course' => $course->id]);
 
         $context = \context_module::instance($quiz->cmid);
         $result = $this->provider->delete_data_for_all_users_in_context($context);
@@ -112,7 +112,7 @@ class provider_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\privacy\provider::delete_data_for_user
      */
-    public function test_delete_data_for_user() {
+    public function test_delete_data_for_user(): void {
         $user1 = $this->getDataGenerator()->create_user();
         $this->setUser($user1);
 
@@ -128,9 +128,9 @@ class provider_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\privacy\provider::get_users_in_context
      */
-    public function test_get_users_in_context() {
+    public function test_get_users_in_context(): void {
         $course = $this->getDataGenerator()->create_course();
-        $quiz = $this->getDataGenerator()->create_module('quiz', array('course' => $course->id));
+        $quiz = $this->getDataGenerator()->create_module('quiz', ['course' => $course->id]);
 
         $context = \context_module::instance($quiz->cmid);
         $userlist = new userlist($context, 'local_honorlockproctoring');
@@ -145,12 +145,12 @@ class provider_test extends \advanced_testcase {
      *
      * @covers \local_honorlockproctoring\privacy\provider::delete_data_for_users
      */
-    public function test_delete_data_for_users() {
+    public function test_delete_data_for_users(): void {
         $user1 = $this->getDataGenerator()->create_user();
         $this->setUser($user1);
 
         $course = $this->getDataGenerator()->create_course();
-        $quiz = $this->getDataGenerator()->create_module('quiz', array('course' => $course->id));
+        $quiz = $this->getDataGenerator()->create_module('quiz', ['course' => $course->id]);
 
         $context = \context_module::instance($quiz->cmid);
         $userlist = new approved_userlist($context, 'local_honorlockproctoring', [$user1->id]);

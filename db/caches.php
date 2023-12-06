@@ -24,10 +24,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$definitions = array(
-    'honorlock_api_token' => array(
+$definitions = [
+    'honorlock_api_token' => [
         'mode' => cache_store::MODE_APPLICATION,
         'simplekeys' => true,
         'staticacceleration' => false,
-    ),
-);
+    ],
+];
