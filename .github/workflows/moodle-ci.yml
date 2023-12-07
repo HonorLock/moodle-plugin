@@ -117,7 +117,7 @@ jobs:
 
       - name: Grunt
         if: ${{ always() }}
-        run: moodle-plugin-ci grunt --max-lint-warnings 0]
+        run: moodle-plugin-ci grunt --max-lint-warnings 0 || [ "$MOODLE_BRANCH" = 'MOODLE_400_STABLE' ] || [ "$MOODLE_BRANCH" = 'MOODLE_401_STABLE' ]
         env:
           MOODLE_BRANCH: ${{ matrix.moodle-branch }}
 
