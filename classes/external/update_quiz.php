@@ -54,7 +54,7 @@ class update_quiz extends \external_api {
                 'quizid' => new external_value(PARAM_INT, 'Quiz Id', VALUE_REQUIRED),
                 'overwritevalues' => new external_single_structure(
                     [
-                        'password' => new external_value(PARAM_TEXT, 'password value')
+                        'password' => new external_value(PARAM_TEXT, 'password value'),
                     ],
                     'values to overwrite',
                     VALUE_REQUIRED

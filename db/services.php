@@ -40,17 +40,17 @@ $functions = [
         'description' => 'Get Quiz Questions',
         'type' => 'read',
         'ajax' => true,
-    ]
+    ],
 ];
 
 $services = [
     'Honorlock Proctoring' => [
         'functions' => [
             'local_honorlockproctoring_update_quiz_values',
-            'local_honorlockproctoring_get_quiz_questions'
+            'local_honorlockproctoring_get_quiz_questions',
         ],
         'restrictedusers' => 1,
         'enabled' => 1,
-        'shortname' => 'honorlockproctoring'
-    ]
+        'shortname' => 'honorlockproctoring',
+    ],
 ];

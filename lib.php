@@ -46,7 +46,7 @@ function local_honorlockproctoring_extend_navigation(global_navigation $navigati
         $quiz = $DB->get_record('quiz', ['id' => $quizid]);
         $attempts = $DB->get_records('quiz_attempts', [
             'quiz' => $quizid,
-            'userid' => $USER->id
+            'userid' => $USER->id,
         ], 'attempt DESC');
 
          // Determine attempt data.

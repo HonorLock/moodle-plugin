@@ -36,5 +36,5 @@ $observers = [
     [
         'eventname' => '\mod_quiz\event\attempt_submitted',
         'callback' => 'local_honorlockproctoring\observer::quiz_attempt_submitted',
-    ]
+    ],
 ];

@@ -51,8 +51,8 @@ class honorlock_test extends \advanced_testcase {
         $tokenresponse = (object)[
         "data" => [
           "access_token" => "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...",
-          "expires_in" => 86000
-        ]
+          "expires_in" => 86000,
+        ],
         ];
 
         \curl::mock_response(json_encode($tokenresponse));
@@ -80,7 +80,7 @@ class honorlock_test extends \advanced_testcase {
         $testresponse = (object)[
         "data" => [
         "iframe_src" => "https://app.honorlock.com/install/extension?locale=en",
-        "extension_id" => "easrpoxsvfplyfubtodkzvtjezcsfqrz"
+        "extension_id" => "easrpoxsvfplyfubtodkzvtjezcsfqrz",
         ]];
 
         \curl::mock_response(json_encode($testresponse));
@@ -101,8 +101,8 @@ class honorlock_test extends \advanced_testcase {
         "data" => [
           "session" => [],
           "camera_url" => "string",
-          "configurations" => []
-        ]
+          "configurations" => [],
+        ],
         ];
         \curl::mock_response(json_encode($testresponse));
 
@@ -141,8 +141,8 @@ class honorlock_test extends \advanced_testcase {
         "data" => [
           "event_type" => "string",
           "exam_taker_name" => "TestTaker",
-          "created_at" => "2023-08-24T14:15:22Z"
-        ]
+          "created_at" => "2023-08-24T14:15:22Z",
+        ],
         ];
 
         // We mock two requests because if it returns "Session has already started" it resends with an updated payload.
@@ -165,8 +165,8 @@ class honorlock_test extends \advanced_testcase {
         "data" => [
           "event_type" => "string",
           "exam_taker_name" => "TestTaker",
-          "created_at" => "2023-08-24T14:15:22Z"
-        ]
+          "created_at" => "2023-08-24T14:15:22Z",
+        ],
         ];
         \curl::mock_response(json_encode($testresponse));
 
