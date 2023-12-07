@@ -66,8 +66,8 @@ class lib_test extends \advanced_testcase {
          $tokenresponse = (object)[
          "data" => [
           "access_token" => "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...",
-          "expires_in" => 86000
-         ]
+          "expires_in" => 86000,
+         ],
          ];
 
          \curl::mock_response(json_encode($tokenresponse));
@@ -85,29 +85,29 @@ class lib_test extends \advanced_testcase {
          $extensioncheckresponse = (object)[
             "data" => [
              "iframe_src" => "https://app.honorlock.com/install/extension?locale=en",
-             "extension_id" => "easrpoxsvfplyfubtodkzvtjezcsfqrz"
+             "extension_id" => "easrpoxsvfplyfubtodkzvtjezcsfqrz",
             ]];
 
           $getinstructionsresponse = (object)[
           "data" => [
-             "launch_screen_url" => "https://example.com/extension/"
-          ]
+             "launch_screen_url" => "https://example.com/extension/",
+          ],
           ];
 
           $startsessionresponse = (object)[
           "data" => [
              "session" => [],
              "camera_url" => "string",
-             "configurations" => []
-             ]
+             "configurations" => [],
+          ],
           ];
 
           $endsessionresponse = (object)[
             "data" => [
                "session" => [],
                "camera_url" => "string",
-               "configurations" => []
-               ]
+               "configurations" => [],
+            ],
             ];
 
           \curl::mock_response(json_encode($endsessionresponse));
@@ -160,8 +160,8 @@ class lib_test extends \advanced_testcase {
            "data" => [
              "event_type" => "string",
              "exam_taker_name" => "TestTaker",
-             "created_at" => "2023-08-24T14:15:22Z"
-           ]
+             "created_at" => "2023-08-24T14:15:22Z",
+           ],
         ];
 
         \curl::mock_response(json_encode($testresponse));
@@ -234,7 +234,7 @@ class lib_test extends \advanced_testcase {
          'questionsperpage' => 0,
          'grade' => 100.0,
          'sumgrades' => 2,
-         'quizpassword' => 'HL_NO_EDIT'
+         'quizpassword' => 'HL_NO_EDIT',
         ];
 
         $quizgenerator = $this->getDataGenerator()->get_plugin_generator('mod_quiz');
